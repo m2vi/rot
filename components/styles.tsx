@@ -14,7 +14,6 @@ export const Inner = styled.div`
   justify-content: start;
   width: 100%;
   max-width: 560px;
-  background: blue;
 `;
 
 export const Textarea = styled.textarea`
