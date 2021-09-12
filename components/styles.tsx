@@ -37,3 +37,12 @@ export const Textarea = styled.textarea`
     cursor: pointer;
   }
 `;
+
+export const TextareaTop = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  left: 0;
+  cursor: pointer;
+`;
