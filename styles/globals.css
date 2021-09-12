@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #141724;
 }
 
 a {
@@ -13,4 +14,49 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.m-top-7 {
+  margin-top: 20px;
+}
+
+.m-bottom-7 {
+  margin-bottom: 20px;
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.select select {
+  font-family: 'Arial';
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 0px solid #000000;
+  background: #29384c;
+  color: #fff;
+  appearance: none;
+
+  font-size: 100%;
+  margin: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.select_arrow {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  width: 6px;
+  height: 6px;
+  border: solid #7b7b7b;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
 }
