@@ -78,7 +78,7 @@ body {
 }
 
 :root {
-  --toastify-color-dark: #1f2633 !important;
+  --toastify-color-dark: #141d29 !important;
   --toastify-color-success: rgb(48, 209, 88) !important;
   --toastify-color-info: #0a84ff !important;
 }
@@ -86,4 +86,24 @@ body {
 .Toastify__toast {
   border-radius: 8px !important;
   padding: 10px !important;
+  box-shadow: none !important;
+  border: 1px solid hsla(0, 0%, 100%, 0.125);
+}
+
+.dD5d-items::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dD5d-items::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.dD5d-items::-webkit-scrollbar-thumb:hover {
+  background: #b3afb3;
+}
+
+.dD5d-items::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0px;
 }

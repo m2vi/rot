@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: grid;
   place-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
 `;
 
 export const Inner = styled.div`
