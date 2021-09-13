@@ -46,3 +46,18 @@ export const TextareaTop = styled.div`
   left: 0;
   cursor: pointer;
 `;
+
+export const TextareaTopWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const SelectWrapper = styled.div`
+  max-width: 8rem;
+  width: 100%;
+`;
+
+export const ToastText = styled.span`
+  display: flex;
+  align-items: center;
+`;

@@ -1,9 +1,20 @@
 import Head from 'next/head';
-import { Inner, Textarea, TextareaTop, Wrapper } from '../components/styles';
+import {
+  Inner,
+  SelectWrapper,
+  Textarea,
+  TextareaTop,
+  TextareaTopWrapper,
+  ToastText,
+  Wrapper,
+} from '../components/styles';
 import { IoArrowDownOutline } from 'react-icons/io5';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { rot, toMap } from '../utils/rot';
 import copyToClipboard from 'copy-to-clipboard';
+import { toast } from 'react-toastify';
+import Favicon from '../components/Favicon';
+import Select from '../components/Select';
 
 const Home = () => {
   const [input, setInput] = useState('');
@@ -19,12 +30,23 @@ const Home = () => {
 
   const copy = () => {
     copyToClipboard(rot(input, parseInt(i)));
+    toast.info(<ToastText>Copied to clipboard</ToastText>, {
+      position: 'top-right',
+      autoClose: 4500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      icon: false,
+    });
   };
 
   return (
     <>
       <Head>
         <title>ROT</title>
+        <Favicon />
       </Head>
       <Wrapper>
         <Inner>
@@ -34,20 +56,11 @@ const Home = () => {
             onChange={handleChange}
           />
           <IoArrowDownOutline className='m-bottom-7 icon' />
-          <div style={{ width: '8rem' }}>
-            <div className='select'>
-              <select onChange={handleSelectChange}>
-                {toMap.map((v: number, i: number) => (
-                  <option selected={i + 1 === 13} key={i} value={i + 1}>
-                    ROT{i + 1}
-                  </option>
-                ))}
-              </select>
-              <div className='select_arrow'></div>
-            </div>
-          </div>
+          <SelectWrapper>
+            <Select array={toMap} onChange={handleSelectChange} />
+          </SelectWrapper>
           <IoArrowDownOutline className='m-top-7 icon' />
-          <div style={{ position: 'relative', width: '100%' }}>
+          <TextareaTopWrapper>
             <TextareaTop onClick={copy} />
             <Textarea
               value={rot(input, parseInt(i))}
@@ -57,7 +70,7 @@ const Home = () => {
               unselectable='on'
               readOnly={true}
             />
-          </div>
+          </TextareaTopWrapper>
         </Inner>
       </Wrapper>
     </>
