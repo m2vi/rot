@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import { ToastContainer } from 'react-toastify';
 import '../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'tailwindcss/tailwind.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>

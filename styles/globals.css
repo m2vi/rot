@@ -1,23 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+:root {
+  --color-button-text: #fff;
+
+  --color-accent: #0a84ff;
+  --color-accent-hover: #51a8ff;
+  --color-accent-disabled: #51a8ff;
+  --color-accent-glow: hsla(200, 100%, 50%, 0.063);
+  --color-accent-avatar-gradient: linear-gradient(
+    145deg,
+    #0a84ff 0%,
+    #51a8ff 45%,
+    #97c9ff 100%
+  );
+
+  --color-primary-100: hsl(0, 0%, 100%);
+  --color-primary-200: hsl(200, 17%, 85%);
+  --color-primary-300: hsl(223, 14%, 60%);
+  --color-primary-500: hsl(215, 30%, 23%);
+  --color-primary-600: hsl(215, 24%, 16%);
+  --color-primary-700: hsl(219, 24%, 16%);
+  --color-primary-800: hsl(215, 35%, 12%);
+  --color-primary-900: hsl(229, 30%, 11%);
+}
+
+.dTGAUq {
+  margin: 0 !important;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary-100);
+}
+
+.aspect-default {
+  aspect-ratio: 16 / 9;
+}
+
 html,
-body {
-  padding: 0;
-  margin: 0;
-  background-color: #141724;
+body,
+#__next {
+  background-color: var(--color-primary-900);
+  color: var(--color-primary-100);
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', 'Poppins', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-.m-top-7 {
-  margin-top: 20px;
-}
-
-.m-bottom-7 {
-  margin-bottom: 20px;
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
 }
 
 .select {
@@ -34,7 +67,7 @@ body {
   padding: 10px 15px;
   outline: 0;
   border: 0px solid #000000;
-  background: #29384c;
+  background: var(--color-primary-500);
   color: #fff;
   appearance: none;
 
@@ -45,11 +78,11 @@ body {
 }
 .select_arrow {
   position: absolute;
-  top: 13px;
+  top: 17px;
   right: 15px;
   width: 6px;
   height: 6px;
-  border: solid #7b7b7b;
+  border: solid var(--color-primary-300);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -78,9 +111,9 @@ body {
 }
 
 :root {
-  --toastify-color-dark: #141d29 !important;
+  --toastify-color-dark: var(--color-primary-800) !important;
   --toastify-color-success: rgb(48, 209, 88) !important;
-  --toastify-color-info: #0a84ff !important;
+  --toastify-color-info: var(--color-accent) !important;
 }
 
 .Toastify__toast {

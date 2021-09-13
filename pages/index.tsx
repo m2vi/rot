@@ -8,7 +8,7 @@ import {
   ToastText,
   Wrapper,
 } from '../components/styles';
-import { IoArrowDownOutline } from 'react-icons/io5';
+import { IoArrowDownOutline, IoClose, IoCloseOutline } from 'react-icons/io5';
 import { ChangeEvent, useState } from 'react';
 import { rot, toMap } from '../utils/rot';
 import copyToClipboard from 'copy-to-clipboard';
@@ -39,6 +39,9 @@ const Home = () => {
       draggable: true,
       progress: undefined,
       icon: false,
+      closeButton: (props) => (
+        <IoClose className='text-primary-300' {...props} />
+      ),
     });
   };
 
@@ -52,20 +55,20 @@ const Home = () => {
         <Inner>
           <Textarea
             placeholder='Input'
-            className='m-bottom-7'
+            className='mb-4'
             onChange={handleChange}
           />
-          <IoArrowDownOutline className='m-bottom-7 icon' />
+          <IoArrowDownOutline className='mb-4 icon' />
           <SelectWrapper>
             <Select array={toMap} onChange={handleSelectChange} />
           </SelectWrapper>
-          <IoArrowDownOutline className='m-top-7 icon' />
+          <IoArrowDownOutline className='mt-4 icon' />
           <TextareaTopWrapper>
             <TextareaTop onClick={copy} />
             <Textarea
               value={rot(input, parseInt(i))}
               placeholder='Output'
-              className='m-top-7 noselect'
+              className='mt-4 noselect'
               disabled
               unselectable='on'
               readOnly={true}
